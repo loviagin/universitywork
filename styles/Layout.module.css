@@ -1,0 +1,155 @@
+.nav {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  z-index: 100;
+}
+
+.navContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #111;
+  text-decoration: none;
+}
+
+.logoIcon {
+  font-size: 20px;
+}
+
+.logoText {
+  font-weight: 600;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navLinks a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #666;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.navLinks a:hover {
+  color: #111;
+  background: #f5f5f5;
+}
+
+.navLinks a.active {
+  color: #111;
+  background: #f5f5f5;
+  font-weight: 500;
+}
+
+.navIcon {
+  font-size: 16px;
+}
+
+.menuButton {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menuButton span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #666;
+  transition: all 0.2s;
+}
+
+@media (max-width: 768px) {
+  .navContent {
+    height: 56px;
+  }
+
+  .menuButton {
+    display: flex;
+  }
+
+  .navLinks {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 8px 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+  }
+
+  .navLinks.menuOpen {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navLinks a {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 0;
+  }
+
+  .menuButton.menuOpen span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .menuButton.menuOpen span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menuButton.menuOpen span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #666;
+  background: #fff;
+}
